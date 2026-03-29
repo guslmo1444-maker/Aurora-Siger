@@ -1,66 +1,70 @@
-# 🚀 Aurora-Siger
+# 🚀 Projeto Aurora-Siger
 
-Projeto de simulação e análise de lançamento de foguetes utilizando programação, modelagem física e análise de dados.
+## 📌 Descrição
+Este projeto tem como objetivo simular e analisar condições de lançamento de foguetes a partir de dados de telemetria.
 
----
-
-## 📌 Introdução
-
-A exploração espacial depende fortemente da análise contínua de dados de telemetria para garantir a segurança e a confiabilidade das missões. Sistemas de lançamento de foguetes utilizam diversos sensores para monitorar variáveis críticas como temperatura, pressão, integridade estrutural e funcionamento de módulos essenciais.
-
-A interpretação correta desses dados é fundamental para determinar se as condições operacionais estão adequadas para a realização de uma decolagem segura.
-
-Nesse contexto, a análise de dados e o desenvolvimento de algoritmos de decisão tornam-se ferramentas essenciais para apoiar o processo de avaliação das condições de lançamento.
+Utilizando Python, foram aplicadas regras baseadas em limites operacionais para classificar automaticamente o status da missão.
 
 ---
 
-## 🎯 Objetivo
+## ⚙️ Tecnologias Utilizadas
+- Python
+- Pandas
+- Matplotlib
+- Jupyter Notebook
 
-Desenvolver um algoritmo capaz de:
+---
 
-- Analisar dados de telemetria  
-- Classificar automaticamente o estado da missão  
-- Apoiar a decisão de lançamento  
+## 🧠 Lógica do Algoritmo
+
+O sistema avalia os seguintes critérios:
+
+- Integridade estrutural
+- Pressão do tanque
+- Nível de energia
+- Temperatura interna
+- Funcionamento dos módulos:
+  - Navegação
+  - Propulsão
+  - Comunicação
 
 ### Possíveis resultados:
-- ✅ Pronto para decolagem  
-- ⚠️ Pronto para decolagem com alerta  
-- ❌ Decolagem abortada  
+- ❌ DECOLAGEM ABORTADA  
+- ⚠️ PRONTO PARA DECOLAR COM ALERTA  
+- ✅ PRONTO PARA DECOLAR  
 
 ---
 
-## ⚙️ Algoritmo de Verificação
+## 📊 Resultados
 
-O sistema utiliza regras baseadas em limites operacionais para avaliar:
+- ❌ Decolagens abortadas: **305**
+- ✅ Pronto para decolar: **195**
 
-- Integridade estrutural  
-- Pressão do tanque  
-- Nível de energia  
-- Temperatura interna  
-- Temperatura externa  
-- Funcionamento de módulos críticos  
+---
 
-### 🧠 Lógica do algoritmo
+## 📈 Distribuição dos Resultados
 
-```python
-if integridade_estrutural == 0:
-    resultado = "DECOLAGEM ABORTADA"
 
-elif pressao_tanque < 95 or pressao_tanque > 105:
-    resultado = "DECOLAGEM ABORTADA"
+![alt text](image.png)
+---
 
-elif nivel_energia < 80:
-    resultado = "DECOLAGEM ABORTADA"
+## 🚨 Principais Causas de Abortamento
 
-elif temperatura_interna < 15 or temperatura_interna > 35:
-    resultado = "DECOLAGEM ABORTADA"
+- 🔋 Energia: 239 ocorrências  
+- ⚙️ Módulos: 46 ocorrências  
+- 🌡️ Pressão: 42 ocorrências  
+- 🌡️ Temperatura: 20 ocorrências  
 
-elif modulo_critico == "FALHA":
-    resultado = "DECOLAGEM ABORTADA"
+![alt text](image-1.png)
 
-elif temperatura_externa > 45:
-    resultado = "PRONTO PARA DECOLAR COM ALERTA"
+---
 
-else:
-    resultado = "PRONTO PARA DECOLAR"
-    
+## 🔍 Análise
+
+A principal causa de abortamento está relacionada ao **nível de energia insuficiente**, indicando que este é o fator crítico no sistema.
+
+Falhas em módulos também apresentam impacto relevante, enquanto temperatura e pressão têm menor influência relativa.
+
+---
+
+## 🧾 Estrutura do Projeto
