@@ -64,7 +64,3 @@ O sistema avalia os seguintes critérios:
 A principal causa de abortamento está relacionada ao **nível de energia insuficiente**, indicando que este é o fator crítico no sistema.
 
 Falhas em módulos também apresentam impacto relevante, enquanto temperatura e pressão têm menor influência relativa.
-
----
-
-## 🧾 Estrutura do Projeto
